@@ -135,7 +135,7 @@ This should display the installed AWS CLI version.
    - Execute the command using `spark-submit`.
 
 ---
-Step 6 :- Docker Image Building and Upload Guide
+## Step 6 :- Docker Image Building and Upload Guide
 ## Step 1: Install Docker
 
 Ensure that Docker is installed on your machine. You can download it from the [official Docker website](https://www.docker.com/).
