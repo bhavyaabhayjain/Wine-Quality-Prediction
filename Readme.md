@@ -135,3 +135,94 @@ This should display the installed AWS CLI version.
    - Execute the command using `spark-submit`.
 
 ---
+Step 6 :- Docker Image Building and Upload Guide
+## Step 1: Install Docker
+
+Ensure that Docker is installed on your machine. You can download it from the [official Docker website](https://www.docker.com/).
+
+## Step 2: Write a Dockerfile
+
+Create a file named `Dockerfile` in the root of your project. Customize it according to your application. Here's a simplified example for a Node.js application:
+
+```Bash
+# Use an official Node.js runtime as a base image
+FROM node:14
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the container
+COPY package*.json ./
+
+# Install application dependencies
+RUN npm install
+
+# Copy the application code to the container
+COPY . .
+
+# Expose a port (replace 3000 with your application's port)
+EXPOSE 3000
+
+# Command to run your application
+CMD ["npm", "start"]
+```
+
+## Step 3: Build the Docker Image
+
+Open a terminal, navigate to the directory containing the Dockerfile, and run the following command to build the Docker image:
+
+```bash
+docker build -t your-dockerhub-username/your-image-name:tag .
+Replace your-dockerhub-username, your-image-name, and tag with your Docker Hub username, the desired image name, and a tag (e.g., latest).
+```
+# Step 4: Login to Docker Hub
+
+Before pushing the Docker image, you need to log in to your Docker Hub account. Follow the steps below:
+
+1. Open a terminal or command prompt.
+
+2. Run the following command to log in to Docker Hub:
+   ```bash
+   docker login
+
+# Step 5: Push the Docker Image to Docker Hub
+
+After successfully logging in to your Docker Hub account, you can proceed to push your Docker image. Follow these steps:
+
+1. Open a terminal or command prompt.
+
+2. Run the following command to push your Docker image to Docker Hub:
+   ```bash
+   docker push your-dockerhub-username/your-image-name:tag
+
+Replace your-dockerhub-username, your-image-name, and tag with your Docker Hub username, the desired image name, and the tag you used during the image build
+# Step 6: Verify on Docker Hub
+
+After successfully pushing your Docker image to Docker Hub, you can verify the upload by following these steps:
+
+1. Open a web browser.
+
+2. Visit the [Docker Hub website](https://hub.docker.com/).
+
+3. Log in to your Docker Hub account if you are not already logged in.
+
+4. Navigate to your Docker Hub repository to confirm that the image has been successfully uploaded.
+
+   Example URL: `https://hub.docker.com/r/your-dockerhub-username/your-image-name`
+
+   Ensure that you replace `your-dockerhub-username` and `your-image-name` with your Docker Hub username and image name.
+
+5. On your repository page, you should see information about the uploaded Docker image, including its tag (e.g., `latest`).
+
+Congratulations! You have now created a Docker image, pushed it to Docker Hub, and verified the upload.
+
+Remember to replace placeholder values in the commands with your actual information.
+
+Save this content in a file with a `.md` extension, for example, `docker_guide.md`.
+
+
+## Docker Hub Repository Link
+
+Visit the following link to access the Docker Hub repository for the uploaded Docker image:
+
+[Docker Hub Repository](https://hub.docker.com/r/bj26391/programmingassignment_2)
