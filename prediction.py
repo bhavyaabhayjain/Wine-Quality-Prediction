@@ -72,8 +72,5 @@ if __name__ == "__main__":
     # Load and evaluate Logistic Regression model
     load_and_evaluate_model('s3a://cldassign2/LogisticRegression', 'LogisticRegression', validation_df)
 
-    # Load and evaluate Random Forest Classifier model
-    load_and_evaluate_model('s3a://cldassign2/RandomForestClassifier', 'RandomForestClassifier', validation_df)
-
     # Load and evaluate Decision Tree Classifier model
     load_and_evaluate_model('s3a://cldassign2/DecisionTreeClassifier', 'DecisionTreeClassifier', validation_df)

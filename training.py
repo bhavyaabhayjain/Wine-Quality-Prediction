@@ -1,7 +1,7 @@
 from pyspark.sql.functions import col, isnan
 from pyspark.sql import SparkSession
 from pyspark.ml.feature import VectorAssembler, StandardScaler
-from pyspark.ml.classification import LogisticRegression, RandomForestClassifier, DecisionTreeClassifier
+from pyspark.ml.classification import LogisticRegression,  DecisionTreeClassifier
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 from pyspark.ml import Pipeline
@@ -115,22 +115,18 @@ if __name__ == "__main__":
 
     # Define data preprocessing and modeling pipelines
     lr_pipeline = build_pipeline(LogisticRegression())
-    rf_pipeline = build_pipeline(RandomForestClassifier())
     dt_pipeline = build_pipeline(DecisionTreeClassifier(labelCol="label", featuresCol="features", seed=0))
 
     # Train and evaluate models
     f1_lr = train_and_evaluate_model(lr_pipeline, df, test_df)
-    f1_rf = train_and_evaluate_model(rf_pipeline, df, test_df)
     f1_dt = train_and_evaluate_model(dt_pipeline, df, test_df)
 
     # Print F1 scores
     print("F1 Score for LogisticRegression Model:", f1_lr)
-    print("F1 Score for RandomForestClassifier Model:", f1_rf)
     print("F1 Score for DecisionTreeClassifier Model:", f1_dt)
 
     # Save models to S3
     save_model_to_s3(lr_pipeline, "s3a://cldassign2/LogisticRegression")
-    save_model_to_s3(rf_pipeline, "s3a://cldassign2/RandomForestClassifier")
     save_model_to_s3(dt_pipeline, "s3a://cldassign2/DecisionTreeClassifier")
 
     # Stop the Spark session
