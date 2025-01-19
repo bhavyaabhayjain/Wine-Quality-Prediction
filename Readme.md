@@ -226,3 +226,12 @@ Save this content in a file with a `.md` extension, for example, `docker_guide.m
 Visit the following link to access the Docker Hub repository for the uploaded Docker image:
 
 [Docker Hub Repository](https://hub.docker.com/r/bj26391/programmingassignment_2)
+
+## Output
+Here are the outputs of the project:
+
+### GitHub
+![GitHub Output](C:\Users\bhavy\OneDrive\Desktop\Github.jpg)
+
+### Docker Output
+![Docker Output](C:\Users\bhavy\OneDrive\Desktop\Output-of-Docker_.jpg)
