@@ -231,7 +231,9 @@ Visit the following link to access the Docker Hub repository for the uploaded Do
 Here are the outputs of the project:
 
 ### GitHub
-![GitHub Output](C:\Users\bhavy\OneDrive\Desktop\Github.jpg)
+![Github](https://github.com/user-attachments/assets/ec674096-b21d-4e28-97cf-fc6da05afdc1)
+
 
 ### Docker Output
-![Docker Output](C:\Users\bhavy\OneDrive\Desktop\Output-of-Docker_.jpg)
+![Docker Output](https://github.com/user-attachments/assets/5cf4f420-5fb4-48e1-b9ec-061b5c4b99f6)
+
